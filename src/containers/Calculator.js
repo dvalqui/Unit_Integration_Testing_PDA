@@ -92,12 +92,21 @@ function App() {
     setCalculatedTotal(calculatedNumber);
   }
 
+  // const divide = (number) => {
+  //   let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
+  //   setRunningTotal(calculatedNumber);
+  //   setCalculatedTotal(calculatedNumber);
+  // }
   const divide = (number) => {
-    let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
-    setRunningTotal(calculatedNumber);
-    setCalculatedTotal(calculatedNumber);
+    let calculatedNumber;
+      if (parseFloat(previousTotal) === 0 | parseFloat(number) === 0) {
+        calculatedNumber = "0"
+      } else {
+        calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
+      }
+      setRunningTotal(calculatedNumber);
+      setCalculatedTotal(calculatedNumber);
   }
-
 
   return (
     <div className="container">
