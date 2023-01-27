@@ -26,5 +26,12 @@ it('should have multiple operations chained together', () => {
   cy.get('=').click();
   cy.get('.display').should('contain', '5')
 })
+it('should return 0 if divide by 0', () => {
+  cy.get('#number7').click();
+  cy.get('#operator-divide').click();
+  cy.get('#number0').click();
+  cy.get('#operator-equals').click();
+  cy.get('.display').should('contain', '0')
+})
 
 })
